@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title id="head-title">自动化测试报告</title>
+    <link href="assets\style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1 id="title">自动化测试报告</h1>
+<p>Report generated on 03-Dec-2023 at 12:58:54 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a>
+    v4.1.1</p>
+<div id="environment-header">
+    <h2>Environment</h2>
+</div>
+<table id="environment"></table>
+<!-- TEMPLATES -->
+<template id="template_environment_row">
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</template>
+<template id="template_results-table__body--empty">
+    <tbody class="results-table-row">
+    <tr id="not-found-message">
+        <td colspan="4">No results found. Check the filters.</th>
+    </tr>
+</template>
+<template id="template_results-table__tbody">
+    <tbody class="results-table-row">
+    <tr class="collapsible">
+    </tr>
+    <tr class="extras-row">
+        <td class="extra" colspan="4">
+            <div class="extraHTML"></div>
+            <div class="media">
+                <div class="media-container">
+                    <div class="media-container__nav--left"><</div>
+                    <div class="media-container__viewport">
+                        <img src=""/>
+                        <video controls>
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="media-container__nav--right">></div>
+                </div>
+                <div class="media__name"></div>
+                <div class="media__counter"></div>
+            </div>
+            <div class="logwrapper">
+                <div class="logexpander"></div>
+                <div class="log"></div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</template>
+<!-- END TEMPLATES -->
+<div class="summary">
+    <div class="summary__data">
+        <h2>Summary</h2>
+        <div class="additional-summary prefix">
+        </div>
+        <p class="run-count">2 tests took 00:00:44.</p>
+        <p class="filter">(Un)check the boxes to filter the results.</p>
+        <div class="summary__reload">
+            <div class="summary__reload__button hidden" onclick="location.reload()">
+                <div>There are still tests running. <br/>Reload this page to get the latest results!</div>
+            </div>
+        </div>
+        <div class="summary__spacer"></div>
+        <div class="controls">
+            <div class="filters">
+                <input checked="true" class="filter" data-test-result="failed" disabled name="filter_checkbox"
+                       type="checkbox"/>
+                <span class="failed">0 Failed,</span>
+                <input checked="true" class="filter" data-test-result="passed" name="filter_checkbox" type="checkbox"/>
+                <span class="passed">2 Passed,</span>
+                <input checked="true" class="filter" data-test-result="skipped" disabled name="filter_checkbox"
+                       type="checkbox"/>
+                <span class="skipped">0 Skipped,</span>
+                <input checked="true" class="filter" data-test-result="xfailed" disabled name="filter_checkbox"
+                       type="checkbox"/>
+                <span class="xfailed">0 Expected failures,</span>
+                <input checked="true" class="filter" data-test-result="xpassed" disabled name="filter_checkbox"
+                       type="checkbox"/>
+                <span class="xpassed">0 Unexpected passes,</span>
+                <input checked="true" class="filter" data-test-result="error" disabled name="filter_checkbox"
+                       type="checkbox"/>
+                <span class="error">0 Errors,</span>
+                <input checked="true" class="filter" data-test-result="rerun" disabled name="filter_checkbox"
+                       type="checkbox"/>
+                <span class="rerun">0 Reruns</span>
+            </div>
+            <div class="collapse">
+                <button id="show_all_details">Show all details</button>&nbsp;/&nbsp;<button id="hide_all_details">Hide
+                all details
+            </button>
+            </div>
+        </div>
+    </div>
+    <div class="additional-summary summary">
+    </div>
+    <div class="additional-summary postfix">
+    </div>
+</div>
+<table id="results-table">
+    <thead id="results-table-head">
+    <tr>
+        <th class="sortable" data-column-type="result">Result</th>
+        <th class="sortable" data-column-type="testId">Test</th>
+        <th class="sortable" data-column-type="duration">Duration</th>
+        <th>Links</th>
+    </tr>
+    </thead>
+</table>
+</body>
+<footer>
+    <div data-jsonblob="{&#34;environment&#34;: {&#34;Python&#34;: &#34;3.10.0rc2&#34;, &#34;Platform&#34;: &#34;Windows-10-10.0.22621-SP0&#34;, &#34;Packages&#34;: {&#34;pytest&#34;: &#34;7.4.3&#34;, &#34;pluggy&#34;: &#34;1.3.0&#34;}, &#34;Plugins&#34;: {&#34;bdd&#34;: &#34;7.0.0&#34;, &#34;check&#34;: &#34;2.2.2&#34;, &#34;html&#34;: &#34;4.1.1&#34;, &#34;metadata&#34;: &#34;3.0.0&#34;}, &#34;JAVA_HOME&#34;: &#34;C:\\Program Files\\Java\\jre1.8.0_301&#34;}, &#34;tests&#34;: {&#34;test_case/test_quote_page.py::TestQuotePage::test_add_security_to_watchlist_success_when_using_element_locator&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_case/test_quote_page.py::TestQuotePage::test_add_security_to_watchlist_success_when_using_element_locator&#34;, &#34;duration&#34;: &#34;00:00:23&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_case/test_quote_page.py::TestQuotePage::test_add_security_to_watchlist_success_when_using_element_locator&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:23&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;------------------------------ Captured log setup ------------------------------\nINFO     root:custom_logger.py:136 {&amp;#x27;udid&amp;#x27;: &amp;#x27;3EP4C19626000158-22:29:2c:0f:b6:1a-LYA-AL00&amp;#x27;, &amp;#x27;version&amp;#x27;: &amp;#x27;10&amp;#x27;, &amp;#x27;serial&amp;#x27;: &amp;#x27;3EP4C19626000158&amp;#x27;, &amp;#x27;brand&amp;#x27;: &amp;#x27;HUAWEI&amp;#x27;, &amp;#x27;model&amp;#x27;: &amp;#x27;LYA-AL00&amp;#x27;, &amp;#x27;hwaddr&amp;#x27;: &amp;#x27;22:29:2c:0f:b6:1a&amp;#x27;, &amp;#x27;sdk&amp;#x27;: 29, &amp;#x27;agentVersion&amp;#x27;: &amp;#x27;0.10.0&amp;#x27;, &amp;#x27;display&amp;#x27;: {&amp;#x27;width&amp;#x27;: 1080, &amp;#x27;height&amp;#x27;: 2340}, &amp;#x27;battery&amp;#x27;: {&amp;#x27;acPowered&amp;#x27;: False, &amp;#x27;usbPowered&amp;#x27;: True, &amp;#x27;wirelessPowered&amp;#x27;: False, &amp;#x27;status&amp;#x27;: 5, &amp;#x27;health&amp;#x27;: 2, &amp;#x27;present&amp;#x27;: True, &amp;#x27;level&amp;#x27;: 100, &amp;#x27;scale&amp;#x27;: 100, &amp;#x27;voltage&amp;#x27;: 4297, &amp;#x27;temperature&amp;#x27;: 280, &amp;#x27;technology&amp;#x27;: &amp;#x27;Li-poly&amp;#x27;}, &amp;#x27;memory&amp;#x27;: {&amp;#x27;total&amp;#x27;: 7730660, &amp;#x27;around&amp;#x27;: &amp;#x27;7 GB&amp;#x27;}, &amp;#x27;cpu&amp;#x27;: {&amp;#x27;cores&amp;#x27;: 8, &amp;#x27;hardware&amp;#x27;: &amp;#x27;vendor Kirin980&amp;#x27;}, &amp;#x27;arch&amp;#x27;: &amp;#x27;&amp;#x27;, &amp;#x27;owner&amp;#x27;: None, &amp;#x27;presenceChangedAt&amp;#x27;: &amp;#x27;0001-01-01T00:00:00Z&amp;#x27;, &amp;#x27;usingBeganAt&amp;#x27;: &amp;#x27;0001-01-01T00:00:00Z&amp;#x27;, &amp;#x27;product&amp;#x27;: None, &amp;#x27;provider&amp;#x27;: None}\nINFO     root:custom_logger.py:136 \u6253\u5f00\u897f\u5357\u8bc1\u5238APP\nINFO     root:custom_logger.py:120 \nINFO     root:custom_logger.py:121 ---------- Start test test_add_security_to_watchlist_success_when_using_element_locator---------------\nINFO     root:custom_logger.py:115 Step: \u6e05\u7a7a\u81ea\u9009\u5217\u8868\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c2\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c2\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c3\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c4\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:115 Step: \u7f16\u8f91\u540e\u56de\u9000\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c5\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\n\n------------------------------ Captured log call -------------------------------\nINFO     root:test_quote_page.py:31 \u6d4b\u8bd5\uff1a\u70b9\u51fbWi-Fi,\u8fdb\u5165\u5230Wi-Fi\u8fde\u63a5\u754c\u9762\nINFO     root:custom_logger.py:115 Step: \u6b63\u5728\u8df3\u8f6c\u5230\u3010\u884c\u60c5\u3011\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c6\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:115 Step: \u6b63\u5728\u8df3\u8f6c\u5230\u3010\u81ea\u9009\u3011\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c7\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:115 Step: \u6dfb\u52a0\u80a1\u7968\u4ee3\u7801600369\u5230\u81ea\u9009\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c8\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c9\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u8f93\u5165\u5b57\u6bb5600369\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c10\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:115 Step: \u4ece\u641c\u7d22\u9875\u56de\u9000\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c11\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:115 Step: \u67e5\u770b\u81ea\u9009\u80a1\u5217\u8868\u662f\u5426\u6210\u529f\u6dfb\u52a0\u2018\u897f\u5357\u8bc1\u5238\u81ea\u9009\u80a1\u2019\n\n---------------------------- Captured log teardown -----------------------------\nINFO     root:custom_logger.py:115 Step: \u6e05\u7a7a\u81ea\u9009\u5217\u8868\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c12\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c13\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c14\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c15\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c16\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c17\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c18\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:115 Step: \u7f16\u8f91\u540e\u56de\u9000\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c19\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:120 \nINFO     root:custom_logger.py:121 ---------- End test test_add_security_to_watchlist_success_when_using_element_locator---------------&#34;}], &#34;test_case/test_quote_page.py::TestQuotePage::test_add_security_to_watchlist_success_when_using_image_locator&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_case/test_quote_page.py::TestQuotePage::test_add_security_to_watchlist_success_when_using_image_locator&#34;, &#34;duration&#34;: &#34;00:00:22&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_case/test_quote_page.py::TestQuotePage::test_add_security_to_watchlist_success_when_using_image_locator&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:22&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;------------------------------ Captured log setup ------------------------------\nINFO     root:custom_logger.py:120 \nINFO     root:custom_logger.py:121 ---------- Start test test_add_security_to_watchlist_success_when_using_image_locator---------------\nINFO     root:custom_logger.py:115 Step: \u6e05\u7a7a\u81ea\u9009\u5217\u8868\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c2\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c3\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c4\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:115 Step: \u7f16\u8f91\u540e\u56de\u9000\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c5\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\n\n------------------------------ Captured log call -------------------------------\nINFO     root:custom_logger.py:115 Step: \u6b63\u5728\u8df3\u8f6c\u5230\u5bfc\u822a\u680f\u3010\u884c\u60c5\u3011\nINFO     root:custom_logger.py:136 \u672a\u627e\u5230\u76ee\u6807\u56fe\u50cf\nINFO     root:custom_logger.py:136 \u672a\u627e\u5230\u76ee\u6807\u56fe\u50cf\nINFO     root:custom_logger.py:115 Step: \u6b63\u5728\u8df3\u8f6c\u5230\u3010\u81ea\u9009\u3011\u9875\u9762\uff0c\u5728\u81ea\u9009\u83dc\u5355\u70b9\u51fb\u3010\u6dfb\u52a0\u80a1\u7968\u3011\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c6\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c7\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u70b9\u51fb\u4e86\u76ee\u6807\u56fe\u50cf\nINFO     root:custom_logger.py:115 Step: \u5728\u3010\u5168\u5c40\u641c\u7d22\u9875\u3011\uff0c\u8f93\u5165\u680f\u8f93\u5165\u2018600369\u2019\nINFO     root:custom_logger.py:136 \u672a\u627e\u5230\u76ee\u6807\u56fe\u50cf\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c8\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c9\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u70b9\u51fb\u4e86\u76ee\u6807\u56fe\u50cf\nINFO     root:custom_logger.py:115 Step: \u70b9\u51fb\u2018+\u81ea\u9009\u2019\uff0c\u8fd4\u56de\u81ea\u9009\u80a1\u9875\u9762\nINFO     root:custom_logger.py:136 \u672a\u627e\u5230\u76ee\u6807\u56fe\u50cf\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c10\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c11\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u70b9\u51fb\u4e86\u76ee\u6807\u56fe\u50cf\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c12\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c13\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u70b9\u51fb\u4e86\u76ee\u6807\u56fe\u50cf\nINFO     root:custom_logger.py:115 Step: \u67e5\u770b\u81ea\u9009\u80a1\u5217\u8868\u662f\u5426\u6210\u529f\u6dfb\u52a0\u2018\u897f\u5357\u8bc1\u5238\u81ea\u9009\u80a1\u2019\n\n---------------------------- Captured log teardown -----------------------------\nINFO     root:custom_logger.py:115 Step: \u6e05\u7a7a\u81ea\u9009\u5217\u8868\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c14\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c15\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c16\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c17\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c18\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c19\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c20\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:115 Step: \u7f16\u8f91\u540e\u56de\u9000\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c1\u6b21\u5143\u7d20\u5b9a\u4f4d\nINFO     root:custom_logger.py:136 \u5df2\u7ecf\u627e\u5230\u8be5\u5143\u7d20\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u7b2c21\u6b21\u5143\u7d20\u70b9\u51fb|\u8f93\u5165|\u4fe1\u606f\u83b7\u53d6\nINFO     root:custom_logger.py:136 \u6b63\u5728\u8fdb\u884c\u5143\u7d20\u70b9\u51fb\nINFO     root:custom_logger.py:120 \nINFO     root:custom_logger.py:121 ---------- End test test_add_security_to_watchlist_success_when_using_image_locator---------------\nINFO     root:custom_logger.py:136 \u5173\u95ed\u897f\u5357\u8bc1\u5238APP&#34;}]}, &#34;renderCollapsed&#34;: [&#34;passed&#34;], &#34;initialSort&#34;: &#34;result&#34;, &#34;title&#34;: &#34;\u81ea\u52a8\u5316\u6d4b\u8bd5\u62a5\u544a&#34;}"
+         id="data-container"></div>
+    <script>
+        (function () {
+            function r(e, n, t) {
+                function o(i, f) {
+                    if (!n[i]) {
+                        if (!e[i]) {
+                            var c = "function" == typeof require && require;
+                            if (!f && c) return c(i, !0);
+                            if (u) return u(i, !0);
+                            var a = new Error("Cannot find module '" + i + "'");
+                            throw a.code = "MODULE_NOT_FOUND", a
+                        }
+                        var p = n[i] = {exports: {}};
+                        e[i][0].call(p.exports, function (r) {
+                            var n = e[i][1][r];
+                            return o(n || r)
+                        }, p, p.exports, r, e, n, t)
+                    }
+                    return n[i].exports
+                }
+
+                for (var u = "function" == typeof require && require, i = 0; i < t.length; i++) o(t[i]);
+                return o
+            }
+
+            return r
+        })()({
+            1: [function (require, module, exports) {
+                const {getCollapsedCategory, setCollapsedIds} = require('./storage.js')
+
+                class DataManager {
+                    get allData() {
+                        return {...this.data}
+                    }
+
+                    set allCollapsed(collapsed) {
+                        this.renderData = {
+                            ...this.renderData, tests: [...this.renderData.tests.map((test) => (
+                                {...test, collapsed}
+                            ))]
+                        }
+                    }
+
+                    get testSubset() {
+                        return [...this.renderData.tests]
+                    }
+
+                    get environment() {
+                        return this.renderData.environment
+                    }
+
+                    get initialSort() {
+                        return this.data.initialSort
+                    }
+
+                    setManager(data) {
+                        const collapsedCategories = [...getCollapsedCategory(data.renderCollapsed)]
+                        const collapsedIds = []
+                        const tests = Object.values(data.tests).flat().map((test, index) => {
+                            const collapsed = collapsedCategories.includes(test.result.toLowerCase())
+                            const id = `test_${index}`
+                            if (collapsed) {
+                                collapsedIds.push(id)
+                            }
+                            return {
+                                ...test,
+                                id,
+                                collapsed,
+                            }
+                        })
+                        const dataBlob = {...data, tests}
+                        this.data = {...dataBlob}
+                        this.renderData = {...dataBlob}
+                        setCollapsedIds(collapsedIds)
+                    }
+
+                    resetRender() {
+                        this.renderData = {...this.data}
+                    }
+
+                    setRender(data) {
+                        this.renderData.tests = [...data]
+                    }
+
+                    toggleCollapsedItem(id) {
+                        this.renderData.tests = this.renderData.tests.map((test) =>
+                            test.id === id ? {...test, collapsed: !test.collapsed} : test,
+                        )
+                    }
+                }
+
+                module.exports = {
+                    manager: new DataManager(),
+                }
+
+            }, {"./storage.js": 8}],
+            2: [function (require, module, exports) {
+                const mediaViewer = require('./mediaviewer.js')
+                const templateEnvRow = document.getElementById('template_environment_row')
+                const templateResult = document.getElementById('template_results-table__tbody')
+
+                function htmlToElements(html) {
+                    const temp = document.createElement('template')
+                    temp.innerHTML = html
+                    return temp.content.childNodes
+                }
+
+                const find = (selector, elem) => {
+                    if (!elem) {
+                        elem = document
+                    }
+                    return elem.querySelector(selector)
+                }
+
+                const findAll = (selector, elem) => {
+                    if (!elem) {
+                        elem = document
+                    }
+                    return [...elem.querySelectorAll(selector)]
+                }
+
+                const dom = {
+                    getStaticRow: (key, value) => {
+                        const envRow = templateEnvRow.content.cloneNode(true)
+                        const isObj = typeof value === 'object' && value !== null
+                        const values = isObj ? Object.keys(value).map((k) => `${k}: ${value[k]}`) : null
+
+                        const valuesElement = htmlToElements(
+                            values ? `<ul>${values.map((val) => `<li>${val}</li>`).join('')}<ul>` : `<div>${value}</div>`)[0]
+                        const td = findAll('td', envRow)
+                        td[0].textContent = key
+                        td[1].appendChild(valuesElement)
+
+                        return envRow
+                    },
+                    getResultTBody: ({testId, id, log, extras, resultsTableRow, tableHtml, result, collapsed}) => {
+                        const resultBody = templateResult.content.cloneNode(true)
+                        resultBody.querySelector('tbody').classList.add(result.toLowerCase())
+                        resultBody.querySelector('tbody').id = testId
+                        resultBody.querySelector('.collapsible').dataset.id = id
+
+                        resultsTableRow.forEach((html) => {
+                            const t = document.createElement('template')
+                            t.innerHTML = html
+                            resultBody.querySelector('.collapsible').appendChild(t.content)
+                        })
+
+                        if (log) {
+                            // Wrap lines starting with "E" with span.error to color those lines red
+                            const wrappedLog = log.replace(/^E.*$/gm, (match) => `<span class="error">${match}</span>`)
+                            resultBody.querySelector('.log').innerHTML = wrappedLog
+                        } else {
+                            resultBody.querySelector('.log').remove()
+                        }
+
+                        if (collapsed) {
+                            resultBody.querySelector('.collapsible > td')?.classList.add('collapsed')
+                            resultBody.querySelector('.extras-row').classList.add('hidden')
+                        } else {
+                            resultBody.querySelector('.collapsible > td')?.classList.remove('collapsed')
+                        }
+
+                        const media = []
+                        extras?.forEach(({name, format_type, content}) => {
+                            if (['image', 'video'].includes(format_type)) {
+                                media.push({path: content, name, format_type})
+                            }
+
+                            if (format_type === 'html') {
+                                resultBody.querySelector('.extraHTML').insertAdjacentHTML('beforeend', `<div>${content}</div>`)
+                            }
+                        })
+                        mediaViewer.setup(resultBody, media)
+
+                        // Add custom html from the pytest_html_results_table_html hook
+                        tableHtml?.forEach((item) => {
+                            resultBody.querySelector('td[class="extra"]').insertAdjacentHTML('beforeend', item)
+                        })
+
+                        return resultBody
+                    },
+                }
+
+                module.exports = {
+                    dom,
+                    htmlToElements,
+                    find,
+                    findAll,
+                }
+
+            }, {"./mediaviewer.js": 6}],
+            3: [function (require, module, exports) {
+                const {manager} = require('./datamanager.js')
+                const {doSort} = require('./sort.js')
+                const storageModule = require('./storage.js')
+
+                const getFilteredSubSet = (filter) =>
+                    manager.allData.tests.filter(({result}) => filter.includes(result.toLowerCase()))
+
+                const doInitFilter = () => {
+                    const currentFilter = storageModule.getVisible()
+                    const filteredSubset = getFilteredSubSet(currentFilter)
+                    manager.setRender(filteredSubset)
+                }
+
+                const doFilter = (type, show) => {
+                    if (show) {
+                        storageModule.showCategory(type)
+                    } else {
+                        storageModule.hideCategory(type)
+                    }
+
+                    const currentFilter = storageModule.getVisible()
+                    const filteredSubset = getFilteredSubSet(currentFilter)
+                    manager.setRender(filteredSubset)
+
+                    const sortColumn = storageModule.getSort()
+                    doSort(sortColumn, true)
+                }
+
+                module.exports = {
+                    doFilter,
+                    doInitFilter,
+                }
+
+            }, {"./datamanager.js": 1, "./sort.js": 7, "./storage.js": 8}],
+            4: [function (require, module, exports) {
+                const {redraw, bindEvents, renderStatic} = require('./main.js')
+                const {doInitFilter} = require('./filter.js')
+                const {doInitSort} = require('./sort.js')
+                const {manager} = require('./datamanager.js')
+                const data = JSON.parse(document.getElementById('data-container').dataset.jsonblob)
+
+                function init() {
+                    manager.setManager(data)
+                    doInitFilter()
+                    doInitSort()
+                    renderStatic()
+                    redraw()
+                    bindEvents()
+                }
+
+                init()
+
+            }, {"./datamanager.js": 1, "./filter.js": 3, "./main.js": 5, "./sort.js": 7}],
+            5: [function (require, module, exports) {
+                const {dom, find, findAll} = require('./dom.js')
+                const {manager} = require('./datamanager.js')
+                const {doSort} = require('./sort.js')
+                const {doFilter} = require('./filter.js')
+                const {
+                    getVisible,
+                    getCollapsedIds,
+                    setCollapsedIds,
+                    getSort,
+                    getSortDirection,
+                    possibleFilters,
+                } = require('./storage.js')
+
+                const removeChildren = (node) => {
+                    while (node.firstChild) {
+                        node.removeChild(node.firstChild)
+                    }
+                }
+
+                const renderStatic = () => {
+                    const renderEnvironmentTable = () => {
+                        const environment = manager.environment
+                        const rows = Object.keys(environment).map((key) => dom.getStaticRow(key, environment[key]))
+                        const table = document.getElementById('environment')
+                        removeChildren(table)
+                        rows.forEach((row) => table.appendChild(row))
+                    }
+                    renderEnvironmentTable()
+                }
+
+                const addItemToggleListener = (elem) => {
+                    elem.addEventListener('click', ({target}) => {
+                        const id = target.parentElement.dataset.id
+                        manager.toggleCollapsedItem(id)
+
+                        const collapsedIds = getCollapsedIds()
+                        if (collapsedIds.includes(id)) {
+                            const updated = collapsedIds.filter((item) => item !== id)
+                            setCollapsedIds(updated)
+                        } else {
+                            collapsedIds.push(id)
+                            setCollapsedIds(collapsedIds)
+                        }
+                        redraw()
+                    })
+                }
+
+                const renderContent = (tests) => {
+                    const sortAttr = getSort(manager.initialSort)
+                    const sortAsc = JSON.parse(getSortDirection())
+                    const rows = tests.map(dom.getResultTBody)
+                    const table = document.getElementById('results-table')
+                    const tableHeader = document.getElementById('results-table-head')
+
+                    const newTable = document.createElement('table')
+                    newTable.id = 'results-table'
+
+                    // remove all sorting classes and set the relevant
+                    findAll('.sortable', tableHeader).forEach((elem) => elem.classList.remove('asc', 'desc'))
+                    tableHeader.querySelector(`.sortable[data-column-type="${sortAttr}"]`)?.classList.add(sortAsc ? 'desc' : 'asc')
+                    newTable.appendChild(tableHeader)
+
+                    if (!rows.length) {
+                        const emptyTable = document.getElementById('template_results-table__body--empty').content.cloneNode(true)
+                        newTable.appendChild(emptyTable)
+                    } else {
+                        rows.forEach((row) => {
+                            if (!!row) {
+                                findAll('.collapsible td:not(.col-links', row).forEach(addItemToggleListener)
+                                find('.logexpander', row).addEventListener('click',
+                                    (evt) => evt.target.parentNode.classList.toggle('expanded'),
+                                )
+                                newTable.appendChild(row)
+                            }
+                        })
+                    }
+
+                    table.replaceWith(newTable)
+                }
+
+                const renderDerived = () => {
+                    const currentFilter = getVisible()
+                    possibleFilters.forEach((result) => {
+                        const input = document.querySelector(`input[data-test-result="${result}"]`)
+                        input.checked = currentFilter.includes(result)
+                    })
+                }
+
+                const bindEvents = () => {
+                    const filterColumn = (evt) => {
+                        const {target: element} = evt
+                        const {testResult} = element.dataset
+
+                        doFilter(testResult, element.checked)
+                        const collapsedIds = getCollapsedIds()
+                        const updated = manager.renderData.tests.map((test) => {
+                            return {
+                                ...test,
+                                collapsed: collapsedIds.includes(test.id),
+                            }
+                        })
+                        manager.setRender(updated)
+                        redraw()
+                    }
+
+                    const header = document.getElementById('environment-header')
+                    header.addEventListener('click', () => {
+                        const table = document.getElementById('environment')
+                        table.classList.toggle('hidden')
+                        header.classList.toggle('collapsed')
+                    })
+
+                    findAll('input[name="filter_checkbox"]').forEach((elem) => {
+                        elem.addEventListener('click', filterColumn)
+                    })
+
+                    findAll('.sortable').forEach((elem) => {
+                        elem.addEventListener('click', (evt) => {
+                            const {target: element} = evt
+                            const {columnType} = element.dataset
+                            doSort(columnType)
+                            redraw()
+                        })
+                    })
+
+                    document.getElementById('show_all_details').addEventListener('click', () => {
+                        manager.allCollapsed = false
+                        setCollapsedIds([])
+                        redraw()
+                    })
+                    document.getElementById('hide_all_details').addEventListener('click', () => {
+                        manager.allCollapsed = true
+                        const allIds = manager.renderData.tests.map((test) => test.id)
+                        setCollapsedIds(allIds)
+                        redraw()
+                    })
+                }
+
+                const redraw = () => {
+                    const {testSubset} = manager
+
+                    renderContent(testSubset)
+                    renderDerived()
+                }
+
+                module.exports = {
+                    redraw,
+                    bindEvents,
+                    renderStatic,
+                }
+
+            }, {"./datamanager.js": 1, "./dom.js": 2, "./filter.js": 3, "./sort.js": 7, "./storage.js": 8}],
+            6: [function (require, module, exports) {
+                class MediaViewer {
+                    constructor(assets) {
+                        this.assets = assets
+                        this.index = 0
+                    }
+
+                    get currentIndex() {
+                        return this.index
+                    }
+
+                    get activeFile() {
+                        return this.assets[this.index]
+                    }
+
+                    nextActive() {
+                        this.index = this.index === this.assets.length - 1 ? 0 : this.index + 1
+                        return [this.activeFile, this.index]
+                    }
+
+                    prevActive() {
+                        this.index = this.index === 0 ? this.assets.length - 1 : this.index - 1
+                        return [this.activeFile, this.index]
+                    }
+                }
+
+
+                const setup = (resultBody, assets) => {
+                    if (!assets.length) {
+                        resultBody.querySelector('.media').classList.add('hidden')
+                        return
+                    }
+
+                    const mediaViewer = new MediaViewer(assets)
+                    const container = resultBody.querySelector('.media-container')
+                    const leftArrow = resultBody.querySelector('.media-container__nav--left')
+                    const rightArrow = resultBody.querySelector('.media-container__nav--right')
+                    const mediaName = resultBody.querySelector('.media__name')
+                    const counter = resultBody.querySelector('.media__counter')
+                    const imageEl = resultBody.querySelector('img')
+                    const sourceEl = resultBody.querySelector('source')
+                    const videoEl = resultBody.querySelector('video')
+
+                    const setImg = (media, index) => {
+                        if (media?.format_type === 'image') {
+                            imageEl.src = media.path
+
+                            imageEl.classList.remove('hidden')
+                            videoEl.classList.add('hidden')
+                        } else if (media?.format_type === 'video') {
+                            sourceEl.src = media.path
+
+                            videoEl.classList.remove('hidden')
+                            imageEl.classList.add('hidden')
+                        }
+
+                        mediaName.innerText = media?.name
+                        counter.innerText = `${index + 1} / ${assets.length}`
+                    }
+                    setImg(mediaViewer.activeFile, mediaViewer.currentIndex)
+
+                    const moveLeft = () => {
+                        const [media, index] = mediaViewer.prevActive()
+                        setImg(media, index)
+                    }
+                    const doRight = () => {
+                        const [media, index] = mediaViewer.nextActive()
+                        setImg(media, index)
+                    }
+                    const openImg = () => {
+                        window.open(mediaViewer.activeFile.path, '_blank')
+                    }
+                    if (assets.length === 1) {
+                        container.classList.add('media-container--fullscreen')
+                    } else {
+                        leftArrow.addEventListener('click', moveLeft)
+                        rightArrow.addEventListener('click', doRight)
+                    }
+                    imageEl.addEventListener('click', openImg)
+                }
+
+                module.exports = {
+                    setup,
+                }
+
+            }, {}],
+            7: [function (require, module, exports) {
+                const {manager} = require('./datamanager.js')
+                const storageModule = require('./storage.js')
+
+                const genericSort = (list, key, ascending, customOrder) => {
+                    let sorted
+                    if (customOrder) {
+                        sorted = list.sort((a, b) => {
+                            const aValue = a.result.toLowerCase()
+                            const bValue = b.result.toLowerCase()
+
+                            const aIndex = customOrder.findIndex((item) => item.toLowerCase() === aValue)
+                            const bIndex = customOrder.findIndex((item) => item.toLowerCase() === bValue)
+
+                            // Compare the indices to determine the sort order
+                            return aIndex - bIndex
+                        })
+                    } else {
+                        sorted = list.sort((a, b) => a[key] === b[key] ? 0 : a[key] > b[key] ? 1 : -1)
+                    }
+
+                    if (ascending) {
+                        sorted.reverse()
+                    }
+                    return sorted
+                }
+
+                const durationSort = (list, ascending) => {
+                    const parseDuration = (duration) => {
+                        if (duration.includes(':')) {
+                            // If it's in the format "HH:mm:ss"
+                            const [hours, minutes, seconds] = duration.split(':').map(Number)
+                            return (hours * 3600 + minutes * 60 + seconds) * 1000
+                        } else {
+                            // If it's in the format "nnn ms"
+                            return parseInt(duration)
+                        }
+                    }
+                    const sorted = list.sort((a, b) => parseDuration(a['duration']) - parseDuration(b['duration']))
+                    if (ascending) {
+                        sorted.reverse()
+                    }
+                    return sorted
+                }
+
+                const doInitSort = () => {
+                    const type = storageModule.getSort(manager.initialSort)
+                    const ascending = storageModule.getSortDirection()
+                    const list = manager.testSubset
+                    const initialOrder = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed', 'Skipped', 'Passed']
+
+                    storageModule.setSort(type)
+                    storageModule.setSortDirection(ascending)
+
+                    if (type?.toLowerCase() === 'original') {
+                        manager.setRender(list)
+                    } else {
+                        let sortedList
+                        switch (type) {
+                            case 'duration':
+                                sortedList = durationSort(list, ascending)
+                                break
+                            case 'result':
+                                sortedList = genericSort(list, type, ascending, initialOrder)
+                                break
+                            default:
+                                sortedList = genericSort(list, type, ascending)
+                                break
+                        }
+                        manager.setRender(sortedList)
+                    }
+                }
+
+                const doSort = (type, skipDirection) => {
+                    const newSortType = storageModule.getSort(manager.initialSort) !== type
+                    const currentAsc = storageModule.getSortDirection()
+                    let ascending
+                    if (skipDirection) {
+                        ascending = currentAsc
+                    } else {
+                        ascending = newSortType ? false : !currentAsc
+                    }
+                    storageModule.setSort(type)
+                    storageModule.setSortDirection(ascending)
+
+                    const list = manager.testSubset
+                    const sortedList = type === 'duration' ? durationSort(list, ascending) : genericSort(list, type, ascending)
+                    manager.setRender(sortedList)
+                }
+
+                module.exports = {
+                    doInitSort,
+                    doSort,
+                }
+
+            }, {"./datamanager.js": 1, "./storage.js": 8}],
+            8: [function (require, module, exports) {
+                const possibleFilters = [
+                    'passed',
+                    'skipped',
+                    'failed',
+                    'error',
+                    'xfailed',
+                    'xpassed',
+                    'rerun',
+                ]
+
+                const getVisible = () => {
+                    const url = new URL(window.location.href)
+                    const settings = new URLSearchParams(url.search).get('visible')
+                    const lower = (item) => {
+                        const lowerItem = item.toLowerCase()
+                        if (possibleFilters.includes(lowerItem)) {
+                            return lowerItem
+                        }
+                        return null
+                    }
+                    return settings === null ?
+                        possibleFilters :
+                        [...new Set(settings?.split(',').map(lower).filter((item) => item))]
+                }
+
+                const hideCategory = (categoryToHide) => {
+                    const url = new URL(window.location.href)
+                    const visibleParams = new URLSearchParams(url.search).get('visible')
+                    const currentVisible = visibleParams ? visibleParams.split(',') : [...possibleFilters]
+                    const settings = [...new Set(currentVisible)].filter((f) => f !== categoryToHide).join(',')
+
+                    url.searchParams.set('visible', settings)
+                    window.history.pushState({}, null, unescape(url.href))
+                }
+
+                const showCategory = (categoryToShow) => {
+                    if (typeof window === 'undefined') {
+                        return
+                    }
+                    const url = new URL(window.location.href)
+                    const currentVisible = new URLSearchParams(url.search).get('visible')?.split(',').filter(Boolean) ||
+                        [...possibleFilters]
+                    const settings = [...new Set([categoryToShow, ...currentVisible])]
+                    const noFilter = possibleFilters.length === settings.length || !settings.length
+
+                    noFilter ? url.searchParams.delete('visible') : url.searchParams.set('visible', settings.join(','))
+                    window.history.pushState({}, null, unescape(url.href))
+                }
+
+                const getSort = (initialSort) => {
+                    const url = new URL(window.location.href)
+                    let sort = new URLSearchParams(url.search).get('sort')
+                    if (!sort) {
+                        sort = initialSort || 'result'
+                    }
+                    return sort
+                }
+
+                const setSort = (type) => {
+                    const url = new URL(window.location.href)
+                    url.searchParams.set('sort', type)
+                    window.history.pushState({}, null, unescape(url.href))
+                }
+
+                const getCollapsedCategory = (renderCollapsed) => {
+                    let categories
+                    if (typeof window !== 'undefined') {
+                        const url = new URL(window.location.href)
+                        const collapsedItems = new URLSearchParams(url.search).get('collapsed')
+                        switch (true) {
+                            case !renderCollapsed && collapsedItems === null:
+                                categories = ['passed']
+                                break
+                            case collapsedItems?.length === 0 || /^["']{2}$/.test(collapsedItems):
+                                categories = []
+                                break
+                            case /^all$/.test(collapsedItems) || collapsedItems === null && /^all$/.test(renderCollapsed):
+                                categories = [...possibleFilters]
+                                break
+                            default:
+                                categories = collapsedItems?.split(',').map((item) => item.toLowerCase()) || renderCollapsed
+                                break
+                        }
+                    } else {
+                        categories = []
+                    }
+                    return categories
+                }
+
+                const getSortDirection = () => JSON.parse(sessionStorage.getItem('sortAsc')) || false
+                const setSortDirection = (ascending) => sessionStorage.setItem('sortAsc', ascending)
+
+                const getCollapsedIds = () => JSON.parse(sessionStorage.getItem('collapsedIds')) || []
+                const setCollapsedIds = (list) => sessionStorage.setItem('collapsedIds', JSON.stringify(list))
+
+                module.exports = {
+                    getVisible,
+                    hideCategory,
+                    showCategory,
+                    getCollapsedIds,
+                    setCollapsedIds,
+                    getSort,
+                    setSort,
+                    getSortDirection,
+                    setSortDirection,
+                    getCollapsedCategory,
+                    possibleFilters,
+                }
+
+            }, {}]
+        }, {}, [4]);
+    </script>
+</footer>
+</html>
