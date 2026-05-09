@@ -2,24 +2,20 @@ module UiHelpers
   DEFAULT_WAIT_TIMEOUT = 7
   DEFAULT_WAIT_INTERVAL = 0.2
 
-  RETRYABLE_ERRORS = [
+  RETRYABLE_FIND_ERRORS = [
     Selenium::WebDriver::Error::NoSuchElementError,
+    Selenium::WebDriver::Error::StaleElementReferenceError
+  ].freeze
+
+  RETRYABLE_CLICK_ERRORS = [
     Selenium::WebDriver::Error::StaleElementReferenceError,
     Selenium::WebDriver::Error::ElementClickInterceptedError,
     Selenium::WebDriver::Error::ElementNotInteractableError
   ].freeze
 
-  def object_xpath(obj)
-    xpath = @object_hash[obj]
-
-    if xpath.nil? || xpath.to_s.strip.empty?
-      fail "Object '#{obj}' not found in @object_hash"
-    end
-
-    xpath
-  end
-
   def smart_click(obj, timeout: DEFAULT_WAIT_TIMEOUT)
+    reset_window_perspective_if_needed(obj)
+
     xpath = object_xpath(obj)
 
     element = wait_for_element_displayed(@driver, xpath, timeout: timeout)
@@ -27,13 +23,15 @@ module UiHelpers
 
     begin
       click_by_strategy(obj, element)
-    rescue Selenium::WebDriver::Error::StaleElementReferenceError,
-           Selenium::WebDriver::Error::ElementClickInterceptedError,
-           Selenium::WebDriver::Error::ElementNotInteractableError
+    rescue *RETRYABLE_CLICK_ERRORS => e
+      puts "Click failed for #{obj}, retry with fresh element and JS click. Error: #{e.class}"
+
       element = wait_for_element_displayed(@driver, xpath, timeout: timeout)
       scroll_to_center(@driver, element)
       js_click(@driver, element)
     end
+
+    true
   end
 
   def click_if_exists(obj, timeout: 2)
@@ -53,9 +51,9 @@ module UiHelpers
 
     begin
       click_by_strategy(obj, element)
-    rescue Selenium::WebDriver::Error::StaleElementReferenceError,
-           Selenium::WebDriver::Error::ElementClickInterceptedError,
-           Selenium::WebDriver::Error::ElementNotInteractableError
+    rescue *RETRYABLE_CLICK_ERRORS => e
+      puts "Optional click failed for #{obj}, retry with fresh element and JS click. Error: #{e.class}"
+
       element = wait_for_element_displayed(
         @driver,
         xpath,
@@ -75,7 +73,21 @@ module UiHelpers
   def verify_object_displayed(obj, timeout: DEFAULT_WAIT_TIMEOUT)
     xpath = object_xpath(obj)
 
-    element = wait_for_element_displayed(@driver, xpath, timeout: timeout)
+    begin
+      element = wait_for_element_displayed(@driver, xpath, timeout: timeout)
+    rescue Selenium::WebDriver::Error::TimeoutError
+      if ie_browser?
+        puts "Object not displayed in IE mode, refresh page and retry: #{obj}"
+
+        @driver.navigate.refresh
+        wait_for_page_stable(timeout: 10)
+
+        element = wait_for_element_displayed(@driver, xpath, timeout: 10)
+      else
+        raise
+      end
+    end
+
     scroll_to_center(@driver, element)
 
     true
@@ -101,14 +113,61 @@ module UiHelpers
     true
   end
 
+  def reset_window_perspective_if_needed(obj)
+    perspective_objects = [
+      "collateral_perspective",
+      "treasury_perspective",
+      "trading_perspective",
+      "settlement_perspective",
+      "referenceData_perspective",
+      "risk_perspective",
+      "positions_perspective",
+      "reporting_perspective",
+      "reportDesigner_perspective"
+    ]
+
+    return unless perspective_objects.include?(obj)
+
+    @bigmap ||= {}
+    @bigmap["visit_list"] ||= {}
+
+    current_user =
+      if @bigmap.key?("current_login_user") && !@bigmap["current_login_user"].nil?
+        @bigmap["current_login_user"]
+      else
+        "default_user"
+      end
+
+    @bigmap["current_login_user"] ||= current_user
+    @bigmap["visit_list"][current_user] ||= {}
+    @bigmap["visit_list"][current_user]["perspectives"] ||= {}
+
+    already_visited = @bigmap["visit_list"][current_user]["perspectives"][obj]
+
+    return if already_visited
+
+    puts "First visit of #{obj} for #{current_user}, reset the window perspective"
+
+    step "I reset the window perspective"
+
+    @bigmap["visit_list"][current_user]["perspectives"][obj] = true
+  end
+
+  def object_xpath(obj)
+    xpath = @object_hash[obj]
+
+    if xpath.nil? || xpath.to_s.strip.empty?
+      fail "Object '#{obj}' not found in @object_hash"
+    end
+
+    xpath
+  end
+
   def wait_for_element_displayed(driver, xpath, timeout: DEFAULT_WAIT_TIMEOUT, raise_error: true)
     wait = Selenium::WebDriver::Wait.new(
       timeout: timeout,
       interval: DEFAULT_WAIT_INTERVAL,
-      ignore: [
-        Selenium::WebDriver::Error::NoSuchElementError,
-        Selenium::WebDriver::Error::StaleElementReferenceError
-      ]
+      ignore: RETRYABLE_FIND_ERRORS
     )
 
     wait.until do
@@ -142,10 +201,7 @@ module UiHelpers
     wait = Selenium::WebDriver::Wait.new(
       timeout: timeout,
       interval: DEFAULT_WAIT_INTERVAL,
-      ignore: [
-        Selenium::WebDriver::Error::NoSuchElementError,
-        Selenium::WebDriver::Error::StaleElementReferenceError
-      ]
+      ignore: RETRYABLE_FIND_ERRORS
     )
 
     wait.until do
@@ -199,7 +255,7 @@ module UiHelpers
       element
     )
   rescue
-    # ignore scroll failure
+    # ignore scroll failure for old browser / IE mode
   end
 
   def js_click(driver, element)
@@ -253,27 +309,8 @@ module UiHelpers
   rescue
     true
   end
-end
 
-
-Given(/^I (click|unclick) the (\w+)$/) do |_action, obj|
-  smart_click(obj)
-  wait_for_page_stable(timeout: duration)
-end
-
-Given(/^I click the (\w+) if exists$/) do |obj|
-  clicked = click_if_exists(obj, timeout: 2)
-  wait_for_page_stable(timeout: duration) if clicked
-end
-
-Given(/^I verify the (\w+) is displayed$/) do |obj|
-  verify_object_displayed(obj)
-end
-
-Given(/^I verify the (\w+) is not displayed$/) do |obj|
-  verify_object_not_displayed(obj)
-end
-
-Given(/^I verify the (\w+) is displayed br2$/) do |obj|
-  verify_object_displayed_br2(obj)
+  def ie_browser?
+    ENV["BROWSER"] == "ie" || ENV["BROWSER"] == "edge_ie"
+  end
 end
