@@ -1,17 +1,13 @@
-def right_click_text_under_object_br2(value_key, obj, timeout: 10)
+def right_click_text_under_object_br2(value_key, obj, contains: false, timeout: 10)
   expected_text = @bigmap[value_key]
 
-  if expected_text.nil? || expected_text.to_s.strip.empty?
-    fail "Cannot find value key in @bigmap: #{value_key}"
-  end
+  fail "Cannot find value key in @bigmap: #{value_key}" if expected_text.nil? || expected_text.to_s.strip.empty?
 
   view = wait_for_browser2_object_displayed(obj, timeout: timeout)
 
-  element = wait_for_child_displayed(
-    view,
-    ".//div[normalize-space(.)='#{expected_text}']",
-    timeout: timeout
-  )
+  xpath_expr = contains ? ".//div[contains(text(),'#{expected_text}')]" : ".//div[text()='#{expected_text}']"
+
+  element = wait_for_child_displayed(view, xpath_expr, timeout: timeout)
 
   scroll_to_center(@driver2, element)
 
@@ -45,5 +41,9 @@ def wait_for_child_displayed(parent_element, child_xpath, timeout: DEFAULT_WAIT_
 end
 
 Given(/^I right click the element with text is (\w+) under (\w+) br2$/) do |value, obj|
-  right_click_text_under_object_br2(value, obj)
+  right_click_text_under_object_br2(value, obj, contains: false)
+end
+
+Given(/^I right click the element with text contains (\w+) under (\w+) br2$/) do |value, obj|
+  right_click_text_under_object_br2(value, obj, contains: true)
 end
