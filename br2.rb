@@ -1,49 +1,27 @@
-def right_click_text_under_object_br2(value_key, obj, contains: false, timeout: 10)
-  expected_text = @bigmap[value_key]
+def blank_page?
 
-  fail "Cannot find value key in @bigmap: #{value_key}" if expected_text.nil? || expected_text.to_s.strip.empty?
+  body_text = @driver.execute_script("return document.body ? document.body.innerText.trim() : ''")
 
-  view = wait_for_browser2_object_displayed(obj, timeout: timeout)
+  body_html = @driver.execute_script("return document.body ? document.body.innerHTML.trim() : ''")
 
-  xpath_expr = contains ? ".//div[contains(text(),'#{expected_text}')]" : ".//div[text()='#{expected_text}']"
+  ready_state = @driver.execute_script("return document.readyState")
 
-  element = wait_for_child_displayed(view, xpath_expr, timeout: timeout)
+  current_url = @driver.current_url
 
-  scroll_to_center(@driver2, element)
+  puts "Blank page check: readyState=#{ready_state}, url=#{current_url}, body_text_length=#{body_text.length}, body_html_length=#{body_html.length}"
 
-  @driver2.action
-          .move_to(element)
-          .pause(0.2)
-          .context_click(element)
-          .perform
+  return true if current_url.nil? || current_url.strip.empty?
 
-  puts "Right clicked element text: #{element.text}"
+  return true if current_url.start_with?("data:")
 
-  true
-end
+  return true if body_text.empty? && body_html.length < 100
 
-def wait_for_child_displayed(parent_element, child_xpath, timeout: DEFAULT_WAIT_TIMEOUT)
-  wait = Selenium::WebDriver::Wait.new(
-    timeout: timeout,
-    interval: DEFAULT_WAIT_INTERVAL,
-    ignore: RETRYABLE_FIND_ERRORS
-  )
+  false
 
-  wait.until do
-    elements = parent_element.find_elements(:xpath, child_xpath)
+rescue => e
 
-    elements.find do |element|
-      element.displayed? && element.enabled?
-    rescue Selenium::WebDriver::Error::StaleElementReferenceError
-      false
-    end
-  end
-end
+  puts "Blank page check failed: #{e.class} - #{e.message}"
 
-Given(/^I right click the element with text is (\w+) under (\w+) br2$/) do |value, obj|
-  right_click_text_under_object_br2(value, obj, contains: false)
-end
+  false
 
-Given(/^I right click the element with text contains (\w+) under (\w+) br2$/) do |value, obj|
-  right_click_text_under_object_br2(value, obj, contains: true)
-end
+en
